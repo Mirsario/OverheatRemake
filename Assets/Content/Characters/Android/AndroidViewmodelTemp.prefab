@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3673816456684564417}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.13, y: -0.19, z: 0.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4738607131312548698}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5690320636542703779
 GameObject:
@@ -41,9 +41,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4738607131312548698}
   - component: {fileID: 2463890530897718104}
-  - component: {fileID: 7298633535810046625}
   - component: {fileID: 5428952201626132069}
   - component: {fileID: 6273498969762915730}
+  - component: {fileID: 2273157054130351638}
+  - component: {fileID: 2224121509572102764}
   m_Layer: 0
   m_Name: AndroidViewmodelTemp
   m_TagString: Untagged
@@ -58,6 +59,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5690320636542703779}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -65,7 +67,6 @@ Transform:
   m_Children:
   - {fileID: 8235794704056109133}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2463890530897718104
 MonoBehaviour:
@@ -80,28 +81,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponParent: {fileID: 8235794704056109133}
---- !u!114 &7298633535810046625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5690320636542703779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3075bac1a4cd14aa34cc9200283006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Body: {fileID: 0}
-  CameraTransform: {fileID: 0}
-  InverseRotation: 0
-  RotationDamping: 0.05
-  RotationMultiplier: 0.5
-  BobbingYRange: 0.017
-  BobbingSpeedMultiplier: 3.4
-  BobbingDamping: 0.1
-  OffsetDamping: 0.01
-  Offset: {x: 0, y: 0, z: 0}
 --- !u!114 &5428952201626132069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +129,36 @@ MonoBehaviour:
     Current: 0
     Target: 0
   BobbingMultiplier: {x: 0.5, y: 1}
+--- !u!114 &2273157054130351638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5690320636542703779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59fc87e39a7f6b94d839b040dffec721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Body: {fileID: 0}
+  CameraTransform: {fileID: 0}
+  InverseRotation: 0
+  RotationDamping: 0.1
+  RotationMultiplier: 1
+--- !u!114 &2224121509572102764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5690320636542703779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e774777f97bf6649b2a1e8f3917a837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransformOverride: {fileID: 0}
+  InverseRotation: 0
+  RotationDamping: 0.1
+  RotationMultiplier: 1

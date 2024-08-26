@@ -1,4 +1,4 @@
-using Overheat.Common.Camera;
+using Overheat.Common.Looking;
 using Overheat.Core.Signals;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -6,8 +6,8 @@ using UnityEngine.Rendering;
 namespace Overheat
 {
 	[RequireComponent(typeof(Signals))]
-    public sealed class PlayerController : MonoBehaviour
-    {
+	public sealed class PlayerController : MonoBehaviour
+	{
 		public Signals ControlledEntity;
 		public Camera Camera;
 

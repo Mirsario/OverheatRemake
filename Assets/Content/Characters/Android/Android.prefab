@@ -414,6 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676cdd06e7a56434e898c4f97f912e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnableBunnyhopping: 1
   AirAcceleration: 8
   AirMaxSpeed: 2
   GroundAcceleration: 10
@@ -482,7 +483,7 @@ MonoBehaviour:
   EyePosition: {x: 0, y: 1.7, z: 0}
   ThirdPersonModel: {fileID: 5661750804559588750}
   Viewmodel: {fileID: 0}
-  ViewmodelPrefab: {fileID: 7298633535810046625, guid: fb1a53f710289fe4fa36fef8a5e75196, type: 3}
+  ViewmodelPrefab: {fileID: 2273157054130351638, guid: fb1a53f710289fe4fa36fef8a5e75196, type: 3}
 --- !u!114 &6524387885273806960
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-using Overheat.Common.Camera;
+using Overheat.Common.Looking;
+using Overheat.Common.Offsets;
 using Overheat.Core.Signals;
 using Overheat.Core.Utilities;
 using UnityEngine;
@@ -38,8 +39,10 @@ namespace Overheat.Common.Weapons
 			args.DestroyPickupContainer();
 
 			//TODO: Replace with proper animations.
-			if (TryGetComponent(out ViewDescription viewDescription) && viewDescription.Viewmodel is Viewmodel viewmodel) {
-				viewmodel.Offset.y -= 2f;
+			if (TryGetComponent(out ViewDescription viewDescription)
+			&& viewDescription.Viewmodel is Viewmodel viewmodel
+			&& viewmodel.TryGetComponent(out VisualOffset visualOffset)) {
+				visualOffset.Offset.y -= 2f;
 			}
 		}
 

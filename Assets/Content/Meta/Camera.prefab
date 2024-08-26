@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 2251549682053157976}
   - component: {fileID: 6147756232940752569}
   - component: {fileID: 6419253895283468105}
-  - component: {fileID: 6591348406434937563}
+  - component: {fileID: 8415804690642763088}
   - component: {fileID: 797440807568910423}
+  - component: {fileID: 5178766383861597942}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -30,13 +31,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3158749011264894871}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &-9107154307200661005
 Camera:
@@ -56,7 +57,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 10.069196
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -127,12 +128,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!81 &2251549682053157976
 AudioListener:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3158749011264894871}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -226,7 +227,7 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
---- !u!114 &6591348406434937563
+--- !u!114 &8415804690642763088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,7 +236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3158749011264894871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f0fbbec3dbdc34cb1809b72e197137, type: 3}
+  m_Script: {fileID: 11500000, guid: 818bb90233c5b6a4190d76b81a125745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {fileID: 0}
@@ -267,6 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {fileID: 0}
+  collisionInfo: {fileID: 0}
   accumulatedBobbing: 1451.1368
   VerticalBobbing:
     Intensity: 0.01
@@ -283,3 +285,21 @@ MonoBehaviour:
     Damping: 0.1
     Current: 1e-45
     Target: 0
+  BobbingMultiplier: {x: 0.5, y: 1}
+--- !u!114 &5178766383861597942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3158749011264894871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2b8f60ba1fe7c4389ee6e061fb76be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResetLocalPosition: 0
+  ResetLocalRotation: 0
+  ResetLocalScale: 0
+  ResetOnRenderUpdate: 0
+  ResetOnFixedUpdate: 0

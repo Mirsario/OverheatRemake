@@ -1,7 +1,8 @@
+using Overheat.Common.Looking;
 using Overheat.Common.Movement;
 using UnityEngine;
 
-namespace Overheat.Common.Camera
+namespace Overheat.Common.Offsets
 {
 	[RequireComponent(typeof(TransformReset))]
 	public sealed class ViewBobbing : MonoBehaviour

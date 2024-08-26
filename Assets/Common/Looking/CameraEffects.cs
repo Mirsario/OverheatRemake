@@ -3,7 +3,7 @@ using Overheat.Common.Movement;
 using Overheat.Core.Utilities;
 using UnityEngine;
 
-namespace Overheat.Common.Camera
+namespace Overheat.Common.Looking
 {
 	[Serializable]
 	public struct CameraRotationEffect
@@ -50,7 +50,7 @@ namespace Overheat.Common.Camera
 		{
 			var rotation = Vector3.zero;
 			float deltaTime = Time.deltaTime;
-		
+
 			if (velocity != null || (velocity = GetComponentInParent<Velocity>()) != null) {
 				var eulerAngles = transform.eulerAngles;
 				var globalVelocity = velocity.Value;

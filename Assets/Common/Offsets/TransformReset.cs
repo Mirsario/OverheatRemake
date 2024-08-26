@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Overheat.Common.Movement
+namespace Overheat.Common.Offsets
 {
 	public sealed class TransformReset : MonoBehaviour
 	{

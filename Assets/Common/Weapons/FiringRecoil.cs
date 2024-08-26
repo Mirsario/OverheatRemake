@@ -1,4 +1,5 @@
-using Overheat.Common.Camera;
+using Overheat.Common.Looking;
+using Overheat.Common.Offsets;
 using Overheat.Core.Signals;
 using Overheat.Core.Utilities;
 using UnityEngine;
@@ -38,8 +39,11 @@ namespace Overheat.Common.Weapons
 
 		public void OnFire(WeaponFiring.OnFireArgs args)
 		{
-			if (signals.Proxy is Signals handler && handler.TryGetComponent(out ViewDescription viewDescription) && viewDescription.Viewmodel is Viewmodel viewmodel) {
-				viewmodel.Offset += new Vector3(
+			if (signals.Proxy is Signals handler
+			&& handler.TryGetComponent(out ViewDescription viewDescription)
+			&& viewDescription.Viewmodel is Viewmodel viewmodel
+			&& viewmodel.TryGetComponent(out VisualOffset visualOffset)) {
+				visualOffset.Offset += new Vector3(
 					Random.Range(VisualOffsetMin.x, VisualOffsetMax.x),
 					Random.Range(VisualOffsetMin.y, VisualOffsetMax.y),
 					Random.Range(VisualOffsetMin.z, VisualOffsetMax.z)
