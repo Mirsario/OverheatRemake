@@ -209,32 +209,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Input: {fileID: -4645433161256163066, guid: 68f01ef507739994aad53c70beac1623, type: 3}
   Cooldown: {fileID: 1310369666}
-  CooldownMultiplier: 7.5
+  DelayMultiplier: 0.035
+  CooldownInSeconds: 0.9
   Shots:
   - Projectile: {fileID: 7455803482180270666, guid: 523befad26c8d4b41a810a7aab30b64a, type: 3}
-    DelayInSeconds: 0
+    Delay: 0
     InstantiateOnlyChildren: 1
     TimeInSeconds: 0
   - Projectile: {fileID: 7455803482180270666, guid: 523befad26c8d4b41a810a7aab30b64a, type: 3}
-    DelayInSeconds: 0.0575
+    Delay: 1
     InstantiateOnlyChildren: 1
     TimeInSeconds: 0
   - Projectile: {fileID: 7455803482180270666, guid: 523befad26c8d4b41a810a7aab30b64a, type: 3}
-    DelayInSeconds: 0.115
+    Delay: 2.5
     InstantiateOnlyChildren: 1
     TimeInSeconds: 0
   - Projectile: {fileID: 7455803482180270666, guid: 523befad26c8d4b41a810a7aab30b64a, type: 3}
-    DelayInSeconds: 0.1725
+    Delay: 4.5
     InstantiateOnlyChildren: 1
     TimeInSeconds: 0
   - Projectile: {fileID: 7455803482180270666, guid: 523befad26c8d4b41a810a7aab30b64a, type: 3}
-    DelayInSeconds: 0.23
+    Delay: 7
     InstantiateOnlyChildren: 1
     TimeInSeconds: 0
   OnFire:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1025563716211422792}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Overheat.Common.Weapons.FiringRecoil, Game
         m_MethodName: OnFire
         m_Mode: 0
@@ -263,10 +264,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Input: {fileID: -3112698753549640235, guid: 68f01ef507739994aad53c70beac1623, type: 3}
   Cooldown: {fileID: 1310369666}
-  CooldownMultiplier: 1
+  DelayMultiplier: 1
+  CooldownInSeconds: 0.1
   Shots:
   - Projectile: {fileID: 7455803482180270666, guid: 523befad26c8d4b41a810a7aab30b64a, type: 3}
-    DelayInSeconds: 0
+    Delay: 0
     InstantiateOnlyChildren: 1
     TimeInSeconds: 0
   OnFire:
@@ -299,7 +301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace7476a0445d914c87efc40d399d5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultCooldown: 0.1
   activeUntilTime: 0
 --- !u!114 &1248891142583649700
 MonoBehaviour:
@@ -346,8 +347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VisualOffsetMin: {x: -0.005, y: 0, z: -0.02}
   VisualOffsetMax: {x: 0.005, y: 0, z: -0.02}
-  AimingOffsetMin: {x: -0.75, y: -0.25}
-  AimingOffsetMax: {x: -0.75, y: 0.25}
+  AimingOffsetMin: {x: -1.5, y: -0.3}
+  AimingOffsetMax: {x: -1.5, y: 0.3}
   PendingAimingOffset: {x: 0, y: 0}
   AimingOffsetDamping: 0.001
   AimingOffsetCutoff: 0.005

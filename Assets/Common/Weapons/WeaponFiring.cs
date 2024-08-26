@@ -14,7 +14,7 @@ namespace Overheat.Common.Weapons
 	public struct WeaponShot
 	{
 		public GameObject Projectile;
-		public float DelayInSeconds;
+		public float Delay;
 		public bool InstantiateOnlyChildren;
 		[HideInInspector] public float TimeInSeconds;
 	}
@@ -28,10 +28,10 @@ namespace Overheat.Common.Weapons
 			public Vector3 Offset;
 		}
 
-
 		public InputActionReference Input;
 		public Cooldown Cooldown;
-		public float CooldownMultiplier = 1f;
+		public float DelayMultiplier = 1f;
+		public float CooldownInSeconds = 1f;
 		public WeaponShot[] Shots = Array.Empty<WeaponShot>();
 
 		public UnityEvent<OnFireArgs> OnFire = new();
@@ -52,12 +52,12 @@ namespace Overheat.Common.Weapons
 
 			if (signals.IsActive(Input) && (Cooldown == null || !Cooldown.IsActive)) {
 				pendingShots.AddRange(Shots.Select(shot => {
-					shot.TimeInSeconds = time + shot.DelayInSeconds;
+					shot.TimeInSeconds = time + (shot.Delay * DelayMultiplier);
 					return shot;
 				}));
 
 				if (Cooldown != null) {
-					Cooldown.SetMultiplied(CooldownMultiplier);
+					Cooldown.Set(CooldownInSeconds);
 				}
 			}
 
