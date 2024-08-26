@@ -235,7 +235,7 @@ MonoBehaviour:
   OnFire:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1025563716211422792}
         m_TargetAssemblyTypeName: Overheat.Common.Weapons.FiringRecoil, Game
         m_MethodName: OnFire
         m_Mode: 0
