@@ -1,0 +1,3 @@
+[submodule "Packages/RealtimeCSG"]
+	path = Packages/RealtimeCSG
+	url = https://github.com/LogicalError/realtime-CSG-for-unity

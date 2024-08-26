@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e32d7ce92facf64f8d25f8c59c12dfc, type: 3}
+  m_Name: KeyboardAndMouse
+  m_EditorClassIdentifier: 
+  TriggerBindings:
+  - Trigger: {fileID: 11400000, guid: b40b54303e755cb4c9d8ac8998954cd3, type: 2}
+    Binding:
+      serialization: +D
+  - Trigger: {fileID: 11400000, guid: b40b54303e755cb4c9d8ac8998954cd3, type: 2}
+    Binding:
+      serialization: -A
+  - Trigger: {fileID: 11400000, guid: 4f2ae6de51c47c34591b8e0297265b02, type: 2}
+    Binding:
+      serialization: -W
+  - Trigger: {fileID: 11400000, guid: 4f2ae6de51c47c34591b8e0297265b02, type: 2}
+    Binding:
+      serialization: +S
+  - Trigger: {fileID: 11400000, guid: d1603bd9c0f8aab4e93be50ac3334ccb, type: 2}
+    Binding:
+      serialization: +MouseX*20
+  - Trigger: {fileID: 11400000, guid: f79a95c176eaff14d8a330d3caf1cced, type: 2}
+    Binding:
+      serialization: +MouseY*20
+  - Trigger: {fileID: 11400000, guid: 6e7a474d72d6afc46b967fbdc97db252, type: 2}
+    Binding:
+      serialization: +Space
