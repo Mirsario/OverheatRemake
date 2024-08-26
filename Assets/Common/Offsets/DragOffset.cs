@@ -1,6 +1,5 @@
 using Overheat.Core.Utilities;
 using UnityEngine;
-using NQuaternion = System.Numerics.Quaternion;
 
 namespace Overheat.Common.Offsets
 {
@@ -12,7 +11,7 @@ namespace Overheat.Common.Offsets
 		public float RotationDamping = 0.1f;
 		public float RotationMultiplier = 1.0f;
 
-		private NQuaternion dampedRotation;
+		private Quaternion dampedRotation;
 
 		void OnEnable()
 		{
@@ -28,16 +27,16 @@ namespace Overheat.Common.Offsets
 			if (baseTransform == null)
 				return;
 
-			var targetRotation = baseTransform.rotation.ToNumerics();
+			var targetRotation = baseTransform.rotation;
 
 			dampedRotation = MathUtils.Damp(dampedRotation, targetRotation, RotationDamping * RotationDamping, Time.deltaTime);
-			
-			var localRotation = dampedRotation * NQuaternion.Inverse(targetRotation);
-			
-			if (InverseRotation) { localRotation = NQuaternion.Inverse(localRotation); }
-			if (RotationMultiplier != 1f) { localRotation = NQuaternion.Lerp(NQuaternion.Identity, localRotation, RotationMultiplier); }
 
-			transform.localRotation = transform.localRotation * localRotation.ToUnity();
+			var localRotation = Quaternion.Inverse(targetRotation) * dampedRotation;
+
+			if (InverseRotation) { localRotation = Quaternion.Inverse(localRotation); }
+			if (RotationMultiplier != 1f) { localRotation = Quaternion.Lerp(Quaternion.identity, localRotation, RotationMultiplier); }
+
+			transform.localRotation = localRotation;
 		}
 	}
 }

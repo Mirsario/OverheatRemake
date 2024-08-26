@@ -2,17 +2,23 @@ using System;
 using UnityEngine;
 using UQuaternion = UnityEngine.Quaternion;
 using NQuaternion = System.Numerics.Quaternion;
+using System.Runtime.CompilerServices;
 
 namespace Overheat.Core.Utilities
 {
 	public static class MathUtils
 	{
+		// See this:
+		// https://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static float DampLerpStep(float smoothing, float dt)
+		{
+			return 1f - Mathf.Pow(smoothing, dt);
+		}
+
 		public static float Damp(float source, float destination, float smoothing, float dt)
 		{
-			// See this:
-			// https://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp
-
-			return Mathf.Lerp(source, destination, 1f - Mathf.Pow(smoothing, dt));
+			return Mathf.Lerp(source, destination, DampLerpStep(smoothing, dt));
 		}
 
 		public static Vector2 Damp(Vector2 source, Vector2 destination, float smoothing, float dt)
@@ -32,35 +38,14 @@ namespace Overheat.Core.Utilities
 			);
 		}
 
+		public static UQuaternion Damp(UQuaternion q1, UQuaternion q2, float smoothing, float dt)
+		{
+			return UQuaternion.Lerp(q1, q2, DampLerpStep(smoothing, dt));
+		}
+
 		public static NQuaternion Damp(NQuaternion q1, NQuaternion q2, float smoothing, float dt)
 		{
-			const float SlerpEpsilon = 1e-6f;
-
-			float cosOmega = NQuaternion.Dot(q1, q2);
-			float sign = 1.0f;
-
-			if (cosOmega < 0.0f) {
-				cosOmega = -cosOmega;
-				sign = -1.0f;
-			}
-
-			float s1, s2;
-			float amount2 = 1f - Mathf.Pow(smoothing, dt);
-			float amount1 = 1f - amount2;
-
-			if (cosOmega > 1.0f - SlerpEpsilon) {
-				// Too close, do straight linear interpolation.
-				s1 = amount1;
-				s2 = amount2 * sign;
-			} else {
-				float omega = MathF.Acos(cosOmega);
-				float invSinOmega = 1 / MathF.Sin(omega);
-
-				s1 = MathF.Sin(amount1 * omega) * invSinOmega;
-				s2 = MathF.Sin(amount2 * omega) * invSinOmega * sign;
-			}
-
-			return q1 * s1 + q2 * s2;
+			return NQuaternion.Lerp(q1, q2, DampLerpStep(smoothing, dt));
 		}
 
 		public static NQuaternion ToNumerics(this UQuaternion q)
