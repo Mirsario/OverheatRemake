@@ -158,8 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransformOverride: {fileID: 0}
   InverseRotation: 0
-  RotationDamping: 0.1
-  RotationMultiplier: 1
+  RotationDamping: 0.008
+  RotationMultiplier: 0.3
 --- !u!114 &477771523678348545
 MonoBehaviour:
   m_ObjectHideFlags: 0
