@@ -3,7 +3,9 @@
     "rootNamespace": "Overheat",
     "references": [
         "Unity.InputSystem",
-        "Unity.VisualScripting.Core"
+        "Unity.VisualScripting.Core",
+        "Unity.Postprocessing.Runtime",
+        "Unity.Postprocessing.Editor"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
