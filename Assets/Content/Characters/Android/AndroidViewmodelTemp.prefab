@@ -172,5 +172,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c317db6f0a73fce46bb4decadd9c4d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecayDamping: 0.1
+  DecayDamping: 0.02
   Offset: {x: 0, y: 0, z: 0}

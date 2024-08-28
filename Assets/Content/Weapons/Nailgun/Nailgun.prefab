@@ -345,8 +345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922f75f2cc137b74bbbf6fc8fd32e586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VisualOffsetMin: {x: -0.005, y: 0, z: -0.02}
-  VisualOffsetMax: {x: 0.005, y: 0, z: -0.02}
+  VisualOffsetMin: {x: -0.006, y: 0, z: -0.025}
+  VisualOffsetMax: {x: 0.006, y: 0, z: -0.025}
   AimingOffsetMin: {x: -1.5, y: -0.3}
   AimingOffsetMax: {x: -1.5, y: 0.3}
   PendingAimingOffset: {x: 0, y: 0}
@@ -365,8 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922f75f2cc137b74bbbf6fc8fd32e586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VisualOffsetMin: {x: -0.005, y: 0, z: -0.02}
-  VisualOffsetMax: {x: 0.005, y: 0, z: -0.02}
+  VisualOffsetMin: {x: -0.006, y: 0, z: -0.025}
+  VisualOffsetMax: {x: 0.006, y: 0, z: -0.025}
   AimingOffsetMin: {x: -2.2, y: -1.5}
   AimingOffsetMax: {x: -2.2, y: 1.5}
   PendingAimingOffset: {x: 0, y: 0}

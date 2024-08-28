@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8871858507766046831}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5810246142653425617}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &3727548635021840345
 Light:
@@ -45,8 +45,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.60828614, b: 0, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: 1
+  m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -107,19 +107,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
+  m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
+  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 1
 --- !u!1001 &63309038328362620
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5783412646679335341, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
@@ -183,6 +187,18 @@ PrefabInstance:
       value: NailCoolingDown
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5783412646679335341, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6631982136320292319}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6559808990755326743, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3372986019530074272}
+    - targetCorrespondingSourceObject: {fileID: 6559808990755326743, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1153048573055463937}
   m_SourcePrefab: {fileID: 100100000, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
 --- !u!4 &5810246142653425617 stripped
 Transform:
@@ -228,7 +244,7 @@ MonoBehaviour:
   CloneMaterial: 1
   Intensity: 1
   CooldownTime: 5
-  BaseBehavior: {fileID: 2596049348456104049, guid: dd4fe56008905c349900c734c05f207e, type: 3}
+  BaseBehavior: {fileID: 0}
   Light: {fileID: 3727548635021840345}
   Renderer: {fileID: 6444695897277663911}
   FinalMaterial: {fileID: 2100000, guid: 2fcb5099b3ca50f4db07da2635b5d4a6, type: 2}
