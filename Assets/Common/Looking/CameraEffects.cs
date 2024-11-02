@@ -1,50 +1,17 @@
-using System;
 using Overheat.Common.Movement;
 using Overheat.Core.Utilities;
 using UnityEngine;
 
 namespace Overheat.Common.Looking
 {
-	[Serializable]
-	public struct CameraRotationEffect
-	{
-		[SerializeField] public float Intensity;
-		[SerializeField] public float Damping;
-		[SerializeField, HideInInspector] public float Current;
-		[SerializeField, HideInInspector] public float Target;
-
-		public CameraRotationEffect(float intensity, float damping)
-		{
-			Current = Target = 0f;
-			Intensity = intensity;
-			Damping = damping;
-		}
-
-		public readonly float Get()
-		{
-			return Current * Intensity;
-		}
-
-		public void Update(float deltaTime)
-		{
-			Current = Damping > 0f ? MathUtils.Damp(Current, Target, Damping * Damping, deltaTime) : Target;
-			Target = 0f;
-		}
-
-		public float UpdateAndGet(float deltaTime)
-		{
-			Update(deltaTime);
-			return Get();
-		}
-	}
 
 	public sealed class CameraEffects : MonoBehaviour
 	{
 		[SerializeField] private Velocity velocity;
 
-		public CameraRotationEffect HorizontalVelocityTilt = new(1f, 0.1f);
-		public CameraRotationEffect HorizontalVelocityPitch = new(1f, 0.1f);
-		public CameraRotationEffect VerticalVelocityPitch = new(1f, 0.1f);
+		public DampedEffect<Vector3> XVelocityRotation = new(new(0f, 0f, 1f), 0.1f);
+		public DampedEffect<Vector3> YVelocityRotation = new(new(1f, 0f, 0f), 0.1f);
+		public DampedEffect<Vector3> ZVelocityRotation = new(new(1f, 0f, 0f), 0.1f);
 
 		void Update()
 		{
@@ -56,14 +23,14 @@ namespace Overheat.Common.Looking
 				var globalVelocity = velocity.Value;
 				var localVelocity = Quaternion.Euler(0f, -eulerAngles.y, 0f) * globalVelocity;
 
-				VerticalVelocityPitch.Target = localVelocity.y;
-				HorizontalVelocityPitch.Target = localVelocity.z;
-				HorizontalVelocityTilt.Target = -localVelocity.x;
+				XVelocityRotation.TargetFactor = -localVelocity.x;
+				YVelocityRotation.TargetFactor = localVelocity.y;
+				ZVelocityRotation.TargetFactor = localVelocity.z;
 			}
 
-			rotation.z += HorizontalVelocityTilt.UpdateAndGet(deltaTime);
-			rotation.x += HorizontalVelocityPitch.UpdateAndGet(deltaTime);
-			rotation.x += VerticalVelocityPitch.UpdateAndGet(deltaTime);
+			rotation += XVelocityRotation.UpdateAndGet(deltaTime);
+			rotation += YVelocityRotation.UpdateAndGet(deltaTime);
+			rotation += ZVelocityRotation.UpdateAndGet(deltaTime);
 
 			transform.localEulerAngles = rotation;
 		}

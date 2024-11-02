@@ -240,21 +240,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {fileID: 0}
-  HorizontalVelocityTilt:
-    Intensity: 0.75
-    Damping: 0.05
-    Current: 0
-    Target: 0
-  HorizontalVelocityPitch:
-    Intensity: 0.5
-    Damping: 0.05
-    Current: 0
-    Target: 0
-  VerticalVelocityPitch:
-    Intensity: 0.5
-    Damping: 0.035
-    Current: 0
-    Target: 0
+  XVelocityRotation:
+    Intensity: {x: 0, y: 0, z: 0.6}
+    Damping: 0.04
+    CurrentFactor: -2.1367857e-11
+    TargetFactor: 0
+  YVelocityRotation:
+    Intensity: {x: 0.75, y: 0, z: 0}
+    Damping: 0.002
+    CurrentFactor: -1.7170907e-22
+    TargetFactor: 0
+  ZVelocityRotation:
+    Intensity: {x: 0.5, y: 0, z: 0}
+    Damping: 0.04
+    CurrentFactor: -0.0000000116377565
+    TargetFactor: 0
 --- !u!114 &797440807568910423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,18 +273,18 @@ MonoBehaviour:
   VerticalBobbing:
     Intensity: 0.01
     Damping: 0.1
-    Current: 1e-45
-    Target: 0
+    CurrentFactor: 0
+    TargetFactor: 0
   HorizontalBobbing:
     Intensity: 0.01
     Damping: 0.1
-    Current: 1e-45
-    Target: 0
+    CurrentFactor: 0
+    TargetFactor: 0
   BobbingAccumulation:
     Intensity: 3
     Damping: 0.1
-    Current: 1e-45
-    Target: 0
+    CurrentFactor: 0
+    TargetFactor: 0
   BobbingMultiplier: {x: 0.5, y: 1}
 --- !u!114 &5178766383861597942
 MonoBehaviour:

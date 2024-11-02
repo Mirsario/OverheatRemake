@@ -1,5 +1,5 @@
-using Overheat.Common.Looking;
 using Overheat.Common.Movement;
+using Overheat.Core.Utilities;
 using UnityEngine;
 
 namespace Overheat.Common.Offsets
@@ -11,9 +11,9 @@ namespace Overheat.Common.Offsets
 		[SerializeField, HideInInspector] private CollisionInfo collisionInfo;
 		[SerializeField, HideInInspector] private float accumulatedBobbing;
 
-		public CameraRotationEffect VerticalBobbing = new(0.03f, 0.1f);
-		public CameraRotationEffect HorizontalBobbing = new(0.03f, 0.1f);
-		public CameraRotationEffect BobbingAccumulation = new(1.00f, 0.1f);
+		public DampedEffect<float> VerticalBobbing = new(0.03f, 0.1f);
+		public DampedEffect<float> HorizontalBobbing = new(0.03f, 0.1f);
+		public DampedEffect<float> BobbingAccumulation = new(1.00f, 0.1f);
 		public Vector2 BobbingMultiplier = new(0.5f, 1.0f);
 
 		void OnEnable()
@@ -37,9 +37,9 @@ namespace Overheat.Common.Offsets
 					}
 				}
 
-				VerticalBobbing.Target = target;
-				HorizontalBobbing.Target = target;
-				BobbingAccumulation.Target = target;
+				VerticalBobbing.TargetFactor = target;
+				HorizontalBobbing.TargetFactor = target;
+				BobbingAccumulation.TargetFactor = target;
 			}
 
 			VerticalBobbing.Update(deltaTime);
