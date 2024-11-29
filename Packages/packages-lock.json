@@ -116,6 +116,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.valvesoftware.steamaudio": {
+      "version": "https://github.com/Mirsario/SteamAudio_UnityPackage.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "124b766891893371b4bc3519fc8aafb8c6b9bf86"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
