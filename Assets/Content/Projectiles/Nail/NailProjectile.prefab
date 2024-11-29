@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5670667791738987541}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6632375227896733121}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &3756179935857302962
 TrailRenderer:
@@ -247,6 +247,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6559808990755326743, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2526309366288476413}
+    - targetCorrespondingSourceObject: {fileID: 6559808990755326743, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7850152273378941583}
   m_SourcePrefab: {fileID: 100100000, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
 --- !u!1 &6287375333743314811 stripped
 GameObject:
@@ -327,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a6b2c0e14ffc94bafba0c955d2a623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 40
+  Speed: 60
   DestroyOnCollision: 1
   ParentOnCollision: 1
 --- !u!114 &5587885226934568944
@@ -393,8 +396,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.11669659
     - serializedVersion: 3
-      time: 0.5
-      value: 1
+      time: 0.9865265
+      value: 1.0062714
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -413,6 +416,19 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-7850152273378941583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6287375333743314811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6e84b3df866b846ba3c6cd08b94f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 7455803482180270666, guid: c2740fabc8aff2a4faaaa48269f421ab, type: 3}
 --- !u!4 &6632375227896733121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5783412646679335341, guid: 3e73f66319094664e8fb1d2fc1b7d644, type: 3}
